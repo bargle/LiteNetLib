@@ -170,7 +170,7 @@ namespace LiteNetLib
                 {
                     _connectTimer = 0;
                     _connectAttempts++;
-                    if (_connectAttempts > MaxConnectAttempts)
+                    if ( MaxConnectAttempts != 0 && ( _connectAttempts > MaxConnectAttempts ) )
                     {
                         CloseConnection(true, DisconnectReason.ConnectionFailed, 0);
                         return;
